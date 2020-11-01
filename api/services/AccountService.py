@@ -1,5 +1,6 @@
 from model.Transaction import Transaction
 from data.OnMemory import OnMemory
+from errors.errors import NegativeTotalError
 
 class AccountService():
     def __init__(self):
@@ -10,9 +11,13 @@ class AccountService():
         return self.db.save_transaction(tr)
 
     def create_credit(self, amount, description):
+
+        account_amount = self.get_account_summary()
+        if amount > account_amount:
+            raise  NegativeTotalError(amount, account_amount)
+
         tr = Transaction("credit", amount, description)
-        self.db.save_transaction(tr)
-        return tr
+        return self.db.save_transaction(tr)
 
     def get_account_summary(self):
         return self.db.get_account_summary()
