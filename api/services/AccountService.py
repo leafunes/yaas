@@ -13,7 +13,7 @@ class AccountService():
     def create_credit(self, amount, description):
 
         account_amount = self.get_account_summary()
-        if amount > account_amount:
+        if account_amount - amount < 0:
             raise  NegativeTotalError(amount, account_amount)
 
         tr = Transaction("credit", amount, description)

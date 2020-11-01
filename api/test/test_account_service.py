@@ -12,6 +12,7 @@ class TestAccountService(unittest.TestCase):
     def test_has_to_call_db_on_create(self):
 
         self.service.db.save_transaction = MagicMock(return_value=1234)
+        self.service.db.get_account_summary = MagicMock(return_value=100)
 
         tr_1 = self.service.create_debit(100, "First transaction")
         tr_2 = self.service.create_credit(50, "Second transaction")
