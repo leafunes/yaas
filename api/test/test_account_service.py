@@ -41,12 +41,12 @@ class TestAccountService(unittest.TestCase):
 
         self.service.db.get_account_summary = MagicMock(return_value=20)
         with self.assertRaises(NegativeTotalError):
-            self.service.create_credit(30, "Credit greater than total account money")
+            self.service.create_debit(30, "Credit greater than total account money")
     
     def test_not_throws_exeption_when_amount_becomes_zero(self):
 
         self.service.db.get_account_summary = MagicMock(return_value=20)
-        self.service.create_credit(20, "Credit greater than total account money")
+        self.service.create_debit(20, "Credit greater than total account money")
 
 
 

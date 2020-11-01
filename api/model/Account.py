@@ -8,8 +8,8 @@ class Account():
     def __init__(self):
         self.total_amount = 0
     
-    def register_credit(self, amount):
+    def register_debit(self, amount):
         self.total_amount = self.total_amount - amount 
 
-    def register_debit(self, amount):
+    def register_credit(self, amount):
         self.total_amount = self.total_amount + amount 

@@ -7,6 +7,7 @@ class Transaction():
     """
     
     def __init__(self, tr_type, amount, description):
+        self.id = None
         self.type = tr_type
         self.amount = amount
         self.description = description
