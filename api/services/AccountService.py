@@ -18,4 +18,4 @@ class AccountService():
         return self.db.get_account_summary()
 
     def get_transactions(self):
-        return self.db.get_account_summary()
+        return self.db.get_all_transactions()
