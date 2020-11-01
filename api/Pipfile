@@ -13,3 +13,4 @@ python_version = "3.8"
 
 [scripts]
 dev = "flask run"
+test = "python -m unittest discover ./test"
