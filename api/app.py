@@ -1,10 +1,12 @@
 from flask import Flask, make_response
+from flask_cors import CORS
 from errors.errors import NegativeTotalError, TransactionNotFoundError
 
 from entrypoints.account_entrypoint import blueprint as account_blueprint
 from entrypoints.utils import bad_request, not_found
 
 app = Flask("api")
+cors = CORS(app)
 
 app.register_blueprint(account_blueprint)
 
