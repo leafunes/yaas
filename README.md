@@ -38,6 +38,7 @@ This last command will run (and open a browser tab) the app in port 3000
 ### TODOs:
 - Proper testing in frontend, with jest and react testing library
 - Proper error handling in the frontend. It only follows the "happy path" nowadays
+- Allow user to create transactions in the frontend
 - Custom hooks in frontend. This can be an opportunity to parametrize the urls of the api
 - Dockerize the entire proyect
 - Implementing a real database engine (like mongo)
